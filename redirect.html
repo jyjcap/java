@@ -21,6 +21,7 @@
     <!-- 등록한 리디렉트 주소를 여기에 넣는다. -->	
     <input type="text" name="state" value=""> <br />	
     <!-- 등록한 리디렉트 주소를 여기에 넣는다. -->	
+    <input type="text" name="oauth2_backend_url" value=""> <br />	
     <input type="text" name="backend_url" value=""> <br />	
     <input type="submit">	
   </form>	
@@ -40,7 +41,8 @@
       return null;	
     }	
     // 파라미터 code를 취득하고 URL 디코딩해서 input code에 넣는다.	
-    $("input[name=code]").val(decodeURIComponent(getParameter('code')));	
+    $("input[name=code]").val(decodeURIComponent(getParameter('code')));
+    $("input[backend_url]").val($("input[oauth2_backend_url]").val());
   </script>	
 </body>	
 </html>
