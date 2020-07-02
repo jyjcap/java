@@ -42,6 +42,7 @@
     }	
     // 파라미터 code를 취득하고 URL 디코딩해서 input code에 넣는다.	
     $("input[name=code]").val(decodeURIComponent(getParameter('code')));
+    $("input[name=oauth2_backend_url]").val(decodeURIComponent(getParameter('oauth2_backend_url')));
     $("input[backend_url]").val($("input[oauth2_backend_url]").val());
   </script>	
 </body>	
