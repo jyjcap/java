@@ -1,3 +1,46 @@
+<!DOCTYPE html>
 <html>
+<head>
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
 
+$("#loginBtn").click(function(){
+  var url ="http://tb-junshade.rigel.kr/mqtt/deviceRequest.do";
+  var data = new Object();
+      data.id = $("#id").val();
+      data.password = $("#password").val();
+   console.log(data);     
+  var json = JSON.stringify(data);
+  doPost(url,json);
+  
+}
+
+function doPost(url, data) {
+   console.log(url);
+   var xhr = new XMLHttpRequest();
+   xhr.open("POST", url);
+   xhr.setRequestHeader("Content-Type", "application/json");
+   xhr.onload = () => {
+     console.log(xhr.status);
+     console.log("success!");
+   };
+   xhr.onerror = () => {
+     console.log(xhr.status);
+     console.log("error!");
+   };
+   xhr.send(data);
+}
+
+});
+</script>
+
+</head>
+<body>
+<form>
+  <input type="button" id="loginBtn" value="login">
+  <input type="text" id="id" value="aaa@aaa.com">
+  <input type="text" id="password" value="12345">
+</form>  
+</body>
 </html>
