@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>Sample</title>
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>	
+</head>
+<body>
+  <form method="POST" action="https://qt-kr.m.lgaccount.com/emp/v2/token">	
+  <input type="button" id="loginBtn" value="login">
+  <input type="text" id="id" value="aaa@aaa.com">
+  <input type="text" id="password" value="12345">
+  </form>	
 <script>
 
 $("#loginBtn").click(function(){
@@ -29,17 +36,11 @@ function doPost(url, data) {
      console.log(xhr.status);
      console.log("error!");
    };
+  console.log(data);
    xhr.send(data);
 }
 
 </script>
 
-</head>
-<body>
-<form>
-  <input type="button" id="loginBtn" value="login">
-  <input type="text" id="id" value="aaa@aaa.com">
-  <input type="text" id="password" value="12345">
-</form>  
 </body>
 </html>
