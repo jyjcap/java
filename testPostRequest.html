@@ -14,7 +14,7 @@ $("#loginBtn").click(function(){
   var json = JSON.stringify(data);
   doPost(url,json);
   
-}
+});
 
 function doPost(url, data) {
    console.log(url);
@@ -32,7 +32,6 @@ function doPost(url, data) {
    xhr.send(data);
 }
 
-});
 </script>
 
 </head>
